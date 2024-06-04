@@ -1,7 +1,10 @@
 import styled from 'styled-components'
+import background from './img/bg1.png'
+
 
 export const Container = styled.div `
-
+    background: url("${background}");
+    background-size: cover;
 
 `
 
