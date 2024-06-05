@@ -6,11 +6,11 @@ import { Container, H1, Img, ContainerItens, InputLabel, Input, Button } from ".
 
 
 const App = () => {
-  const users = [
-    {id: Math.random(), name: "Ermeson", age: 24},
-    {id: Math.random(), name: "Matheus", age: 21},
-    {id: Math.random(), name: "Matheus", age: 21}
-  ]; 
+  // const users = [
+  //   {id: Math.random(), name: "Ermeson", age: 24},
+  //   {id: Math.random(), name: "Matheus", age: 21},
+  //   {id: Math.random(), name: "Matheus", age: 21}
+  // ]; 
  
   return (
 
@@ -24,15 +24,15 @@ const App = () => {
         <Input placeholder="Idade"></Input>
         <Button>Cadastrar <img alt="seta" src={Seta} /></Button>
 
-        <ul>
+        {/* <ul>
           {users.map((user) => (
             <li key={user.id}>
               {user.name} - {user.age}
             </li>
           ))}
-        </ul>
+        </ul> */}
 
-        
+
       </ContainerItens>
 
     </Container>
