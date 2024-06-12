@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Imgagem from './img/img.png';
 import Seta from './img/seta.png'
 import Lixeira from './img/lixeira.png'
@@ -7,23 +7,34 @@ import { Container, H1, Img, ContainerItens, InputLabel, Input, Button, User } f
 
 
 const App = () => {
-  const users = [
-    {id: Math.random(), name: "Ermeson", age: 24},
-    {id: Math.random(), name: "Matheus", age: 21},
-    {id: Math.random(), name: "Matheus", age: 21}
-  ]; 
- 
-  return (
+  const [users, setUsers] = useState([]); 
+  const [name, setName] = useState(); 
+  const [age, setAge] = useState(); 
 
+ 
+  function addNewUser(){
+      setUsers([...users,{id: Math.random(), name, age}]);
+  }
+
+  function changeInputName(event){
+      setName(event.target.value);
+  }
+
+  function changeInputAge(event){
+      setAge(event.target.value);
+  }
+
+
+  return (
     <Container>
       <Img src={Imgagem} alt='logo-imagem' ></Img>
       <ContainerItens>
         <H1>Olá!</H1>
         <InputLabel>Nome</InputLabel>
-        <Input placeholder="Nome"></Input>
+        <Input onChange={changeInputName} placeholder="Nome"></Input>
         <InputLabel>Idade</InputLabel>
-        <Input placeholder="Idade"></Input>
-        <Button>Cadastrar <img alt="seta" src={Seta} /></Button>
+        <Input onChange={changeInputAge} placeholder="Idade"></Input>
+        <Button onClick={addNewUser}>Cadastrar <img alt="seta" src={Seta} /></Button>
 
         <ul>
           {users.map((user) => (
