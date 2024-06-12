@@ -17,19 +17,10 @@ const App = () => {
     setUsers([...users, { id: Math.random(), name: inputName.current.value, age: inputAge.current.value }]);
   }
 
-  // const [name, setName] = useState(); 
-  // const [age, setAge] = useState(); 
-
-  // function addNewUser(){
-  //     setUsers([...users,{id: Math.random(), name, age}]);
-  // }
-  // function changeInputName(event){
-  //     setName(event.target.value);
-  // }
-  // function changeInputAge(event){
-  //     setAge(event.target.value);
-  // }
-
+  function deleteUser(userId){
+      const newUser = users.filter((user) => user.id !== userId )
+      setUsers(newUser)
+  }
 
   return (
     <Container>
@@ -37,10 +28,8 @@ const App = () => {
       <ContainerItens>
         <H1>Olá!</H1>
         <InputLabel>Nome</InputLabel>
-        {/* <Input onChange={changeInputName} placeholder="Nome"></Input> */}
         <Input ref={inputName} placeholder="Nome"></Input>
         <InputLabel>Idade</InputLabel>
-        {/* <Input onChange={changeInputAge} placeholder="Idade"></Input> */}
         <Input ref={inputAge} placeholder="Idade"></Input>
         <Button onClick={addNewUser}>Cadastrar <img alt="seta" src={Seta} /></Button>
 
@@ -48,7 +37,7 @@ const App = () => {
           {users.map((user) => (
             <User key={user.id}>
               <p>{user.name}</p> <p>{user.age}</p>
-              <button><img src={Lixeira} alt='Lixeira'></img></button>
+              <button onClick={() => deleteUser(user.id)}><img src={Lixeira} alt='Lixeira'></img></button>
             </User>
           ))}
         </ul>
