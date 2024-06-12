@@ -10,7 +10,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     
 `
 
@@ -37,7 +37,7 @@ export const ContainerItens = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 44px;
-    height: 100vh;
+    height: 100%;  
 
 `
 
@@ -46,7 +46,6 @@ export const InputLabel = styled.p`
     font-style: normal; 
     font-weight: bold;
     font-size: 20px;
-    padding-left: 15px;
     margin-left: 20px;
     line-height: 22px;
     
@@ -60,11 +59,10 @@ export const Input = styled.input`
     border-radius: 14px;
     border: none;
     outline: none;
-    padding-left: 35px;
     color: #FFFFFF;
     font-size: 20px;
     margin-bottom: 34px;
-
+    padding: 18px;
 `
 
 export const Button = styled.button`
@@ -82,6 +80,7 @@ export const Button = styled.button`
     align-items: center;
     justify-content: center;
     gap: 20px;
+
     
     &:hover{
         opacity: 0.9;
@@ -92,4 +91,31 @@ export const Button = styled.button`
     }
 `
 
+export const User = styled.li `
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(255,255,255,0.25);
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+    border-radius: 14px;
+    margin-top: 25px;
+    width: 342px;
+    height: 58px;
+    border: none;
+    outline: none;
+    
+    p{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 28px;
+        color: #FFFFFF;
+    }
 
+    button{
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+`

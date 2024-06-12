@@ -1,16 +1,17 @@
 import React from 'react';
 import Imgagem from './img/img.png';
 import Seta from './img/seta.png'
+import Lixeira from './img/lixeira.png'
 
-import { Container, H1, Img, ContainerItens, InputLabel, Input, Button } from "./styles"
+import { Container, H1, Img, ContainerItens, InputLabel, Input, Button, User } from "./styles"
 
 
 const App = () => {
-  // const users = [
-  //   {id: Math.random(), name: "Ermeson", age: 24},
-  //   {id: Math.random(), name: "Matheus", age: 21},
-  //   {id: Math.random(), name: "Matheus", age: 21}
-  // ]; 
+  const users = [
+    {id: Math.random(), name: "Ermeson", age: 24},
+    {id: Math.random(), name: "Matheus", age: 21},
+    {id: Math.random(), name: "Matheus", age: 21}
+  ]; 
  
   return (
 
@@ -24,13 +25,14 @@ const App = () => {
         <Input placeholder="Idade"></Input>
         <Button>Cadastrar <img alt="seta" src={Seta} /></Button>
 
-        {/* <ul>
+        <ul>
           {users.map((user) => (
-            <li key={user.id}>
-              {user.name} - {user.age}
-            </li>
+            <User key={user.id}>
+              <p>{user.name}</p> <p>{user.age}</p>
+              <button><img src={Lixeira} alt='Lixeira'></img></button>
+            </User>
           ))}
-        </ul> */}
+        </ul>
 
 
       </ContainerItens>
