@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useRef } from 'react';
 import Imgagem from './img/img.png';
 import Seta from './img/seta.png'
 import Lixeira from './img/lixeira.png'
@@ -7,22 +7,28 @@ import { Container, H1, Img, ContainerItens, InputLabel, Input, Button, User } f
 
 
 const App = () => {
-  const [users, setUsers] = useState([]); 
-  const [name, setName] = useState(); 
-  const [age, setAge] = useState(); 
+  const [users, setUsers] = useState([]);
 
- 
-  function addNewUser(){
-      setUsers([...users,{id: Math.random(), name, age}]);
+  const inputName = useRef()
+  const inputAge = useRef()
+
+
+  function addNewUser() {
+    setUsers([...users, { id: Math.random(), name: inputName.current.value, age: inputAge.current.value }]);
   }
 
-  function changeInputName(event){
-      setName(event.target.value);
-  }
+  // const [name, setName] = useState(); 
+  // const [age, setAge] = useState(); 
 
-  function changeInputAge(event){
-      setAge(event.target.value);
-  }
+  // function addNewUser(){
+  //     setUsers([...users,{id: Math.random(), name, age}]);
+  // }
+  // function changeInputName(event){
+  //     setName(event.target.value);
+  // }
+  // function changeInputAge(event){
+  //     setAge(event.target.value);
+  // }
 
 
   return (
@@ -31,9 +37,11 @@ const App = () => {
       <ContainerItens>
         <H1>Olá!</H1>
         <InputLabel>Nome</InputLabel>
-        <Input onChange={changeInputName} placeholder="Nome"></Input>
+        {/* <Input onChange={changeInputName} placeholder="Nome"></Input> */}
+        <Input ref={inputName} placeholder="Nome"></Input>
         <InputLabel>Idade</InputLabel>
-        <Input onChange={changeInputAge} placeholder="Idade"></Input>
+        {/* <Input onChange={changeInputAge} placeholder="Idade"></Input> */}
+        <Input ref={inputAge} placeholder="Idade"></Input>
         <Button onClick={addNewUser}>Cadastrar <img alt="seta" src={Seta} /></Button>
 
         <ul>
