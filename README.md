@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+E-commerce MVC
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto é um sistema de e-commerce desenvolvido na arquitetura MVC utilizando tecnologias como Java, Spring Boot, JPA, Thymeleaf, Bootstrap 5, HTML, CSS, com banco de dados H2 para testes e MySQL para produção.
+Tecnologias Utilizadas
 
-## Available Scripts
+    Linguagem: Java
+    Frontend: HTML, CSS, Bootstrap 5
+    Backend: Spring Boot, JPA, Spring Security
+    Templates: Thymeleaf
+    Banco de Dados: H2 (em memória para testes) e MySQL (produção)
+    Validação: Spring Validation
 
-In the project directory, you can run:
+Funcionalidades
 
-### `npm start`
+    Gerenciamento de Produtos: Adicionar, editar e excluir produtos.
+    Gerenciamento de Pessoas: Cadastro de pessoas físicas e jurídicas.
+    Sistema de Vendas: Registro e gerenciamento de compras.
+    Autenticação e Autorização: Login, cadastro de usuários e controle de acesso.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Visões do Sistema
+Visão do Administrador
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+As funcionalidades acessíveis ao administrador incluem:
 
-### `npm test`
+    Lista de Produtos: Visualização, edição e exclusão de produtos.
+        Botões de "Editar" e "Excluir" para cada produto.
+    Gerenciamento de Pessoas Físicas e Jurídicas: Listar, adicionar e editar dados de pessoas.
+    Lista de Compras do Sistema: Visualização detalhada de todas as compras realizadas, com acesso aos detalhes de cada compra.
+    Acesso Restrito: Página de acesso negado para funcionalidades exclusivas do administrador.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Visão do Usuário Normal
 
-### `npm run build`
+O usuário normal possui as seguintes funcionalidades:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    Visualização de Produtos: Pode visualizar os produtos disponíveis para compra.
+    Carrinho de Compras: Visualização do carrinho com a quantidade de itens.
+    Sistema de Compras: Acesso à lista de compras realizadas e seus detalhes.
+    Formulários de Cadastro e Login: Cadastro de novos usuários e autenticação no sistema.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Estrutura do Projeto
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+O projeto segue a arquitetura MVC (Model-View-Controller), onde:
 
-### `npm run eject`
+    Model: Gerencia a lógica de negócios, validações e interações com o banco de dados.
+    View: Responsável pela apresentação dos dados ao usuário utilizando Thymeleaf.
+    Controller: Atua como intermediário entre as views e os models, processando as entradas do usuário e retornando as respostas apropriadas.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Considerações Finais
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Este projeto foi desenvolvido com o objetivo de aprendizado na disciplina de Programação Web II, aplicando conceitos de desenvolvimento web com foco em e-commerce e controle de acesso.
